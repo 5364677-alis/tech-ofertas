@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Ofertas - Samsung & Motorola</title>
+    <style>
+        /* --- Configuración General --- */
+        :root {
+            --color-fondo: #1a1a1a; /* Fondo oscuro tecnológico */
+            --color-rojo-mate: #c0392b; /* Rojo mate principal */
+            --color-rojo-hover: #a93226; /* Rojo mate más oscuro para hover */
+            --color-tarjeta: #2c2c2c; /* Fondo para las tarjetas de producto */
+            --color-texto: #f1f1f1; /* Texto principal (blanco roto) */
+            --color-texto-secundario: #aaa; /* Texto para el footer */
+            --fuente-principal: 'Roboto', 'Arial', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fuente-principal);
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        /* --- Encabezado --- */
+        .header-principal {
+            background-color: var(--color-rojo-mate);
+            color: var(--color-texto);
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-principal h1 {
+            margin: 0;
+        }
+
+        /* --- Contenido Principal --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .seccion-marca h2 {
+            font-size: 2.5rem;
+            color: var(--color-rojo-mate);
+            border-bottom: 3px solid var(--color-rojo-mate);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* --- Rejilla de Productos --- */
+        .product-grid {
+            display: grid;
+            /* Crea columnas automáticas que miden al menos 280px */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* --- Tarjeta de Producto --- */
+        .product-card {
+            background-color: var(--color-tarjeta);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+            display: block;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Hace que esta sección crezca para llenar el espacio */
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-texto);
+        }
+
+        .product-info .price {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: var(--color-rojo-mate);
+            margin-bottom: 1rem;
+        }
+
+        .buy-button {
+            background-color: var(--color-rojo-mate);
+            color: var(--color-texto);
+            border: none;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            margin-top: auto; /* Empuja el botón al fondo de la tarjeta */
+        }
+
+        .buy-button:hover {
+            background-color: var(--color-rojo-hover);
+        }
+
+        /* --- Pie de Página --- */
+        .footer-principal {
+            background-color: #111; /* Un negro más profundo para el footer */
+            color: var(--color-texto-secundario);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 2px solid var(--color-rojo-mate);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-principal">
+        <h1>Tech Ofertas Bajas</h1>
+    </header>
+
+    <main class="container">
+
+        <section id="samsung" class="seccion-marca">
+            <h2>Samsung</h2>
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <img src=img/samsung_S23Ultra.jpeg alt="Samsung S23 Ultra">
+                    <div class="product-info">
+                        <h3>Samsung S23 Ultra</h3>
+                        <p class="price">$799.99</p>
+                        <button class="buy-button" onclick="comprar('Samsung S23 Ultra')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src=img/samsung_a53.jpeg alt="Samsung Galaxy A53">
+                    <div class="product-info">
+                        <h3>Samsung Galaxy A53</h3>
+                        <p class="price">$299.99</p>
+                        <button class="buy-button" onclick="comprar('Samsung Galaxy A53')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src=img/samsung_A35.jpeg alt="Samsung Galaxy A35">
+                    <div class="product-info">
+                        <h3>Samsung Galaxy A35</h3>
+                        <p class="price">$349.99</p>
+                        <button class="buy-button" onclick="comprar('Samsung Galaxy A35')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="motorola" class="seccion-marca">
+            <h2>Motorola</h2>
+            <div class="product-grid">
+
+                <div class="product-card">
+                    <img src=img/motorola_edge40.jpeg alt="Motorola Edge 40">
+                    <div class="product-info">
+                        <h3>Motorola Edge 40</h3>
+                        <p class="price">$449.99</p>
+                        <button class="buy-button" onclick="comprar('Motorola Edge 40')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src=img/motorola_G85.jpeg alt="Motorola G85">
+                    <div class="product-info">
+                        <h3>Motorola G85</h3>
+                        <p class="price">$279.99</p>
+                        <button class="buy-button" onclick="comprar('Motorola G85')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src=img/motorola_G04.jpeg alt="Motorola G04">
+                    <div class="product-info">
+                        <h3>Motorola G04</h3>
+                        <p class="price">$129.99</p>
+                        <button class="buy-button" onclick="comprar('Motorola G04')">Comprar Ahora</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-principal">
+        <p>Alisson Fabiana Gonzalez Hernandez G-1-3</p>
+    </footer>
+
+    <script>
+        function comprar(modelo) {
+            // Esto es solo un ejemplo. En una tienda real, aquí iría la lógica del carrito.
+            alert('¡' + modelo + ' ha sido agregado a tu carrito!');
+        }
+    </script>
+
+</body>
+</html>
